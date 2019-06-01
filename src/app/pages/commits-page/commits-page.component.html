@@ -1,0 +1,22 @@
+<section class="commits">
+  <header class="header">
+    <div class="leftHeader">
+        <button mat-raised-button class="goBack"
+          routerLink="/"><</button>
+    </div>
+    <div class="centerHeader">
+        <h3>Repository Name</h3>
+    </div>   
+    <div class="rightHeader"></div>
+  </header>
+  <aside class="sidebar">
+    <div class="commitsList" *ngIf="commitsList">
+      <app-commits-list [commits]="commitsList" (shaChanged)="shaChanged($event)"></app-commits-list>
+    </div>
+  </aside>
+  <div class="content">
+    <div class="commitDetails" *ngIf="commit">
+        <app-commit-details [commit]="commit"></app-commit-details>
+    </div>
+  </div>
+</section>

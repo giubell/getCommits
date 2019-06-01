@@ -1,0 +1,48 @@
+.commits {
+    .header {
+        grid-area: Header;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        background-color: #96ACB7;
+        color: white;
+        position: fixed;
+        width: 100%;
+      
+        .leftHeader {
+          flex: 1;
+          padding-left: 20px;
+        }
+      
+        .centerHeader {
+          flex: 2;
+          text-align: center;
+          transform: translateX(-64px);
+        }
+      
+        .rightHeader {
+          flex: 1;
+        }
+      }
+      
+      .sidebar {
+        grid-area: sidebar;
+        background-color: #D4E4BC;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        float: left;
+        height: calc(100vh - 60px);
+        margin-top: 60px;
+        position: fixed;
+      }
+      
+      .content {
+        grid-area: Content;
+        height: calc(100vh - 60px); 
+        width: calc(100% - 400px);
+        float: right;
+      }
+      
+}
