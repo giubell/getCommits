@@ -1,0 +1,18 @@
+.searchPage {
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .searchForm {
+        min-width: 600px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+
+        .searchForm__input {
+            padding: 10px;
+        }
+    }
+}

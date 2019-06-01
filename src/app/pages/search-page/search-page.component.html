@@ -1,0 +1,19 @@
+<section class="searchPage">
+    <div class="content">
+      <mat-card class="searchCard">
+        <mat-card-header>
+          <mat-card-title><h2>Find a Repository</h2></mat-card-title>
+        </mat-card-header>
+        <form class="searchForm" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
+          <mat-form-field class="searchForm__input">
+            <input type="text" name="username" matInput placeholder="Username" ngModel>
+          </mat-form-field>
+          <mat-form-field class="searchForm__input">
+            <input type="text" name="reponame" matInput placeholder="Repository name" ngModel>
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="primary">Search</button>
+        </form>
+      </mat-card>
+    </div>
+  </section>
+  
