@@ -1,0 +1,11 @@
+<section class="commitsList">
+
+  <mat-list>
+    <mat-list-item *ngFor="let commit of commits">
+       <button mat-button (click)="onClick(commit.sha)">
+          {{ commit.sha }}
+       </button>
+    </mat-list-item>
+  </mat-list>
+
+</section>
