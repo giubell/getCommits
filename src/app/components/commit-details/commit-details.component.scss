@@ -1,0 +1,37 @@
+.commitDetails {
+    padding: 20px;
+    line-height: 2em;
+
+    .commit {
+        font-size: 1.2em;
+    }
+
+    .commit-author {
+        font-weight: bold;
+    }
+
+    .author {
+        display: flex;
+        justify-content: flex-start;
+
+        span {
+            margin-right: 20px;
+        }
+    }
+
+    .stats{
+        display: flex;
+        justify-content: flex-start;
+
+        span {
+            margin-right: 20px;
+        }
+    }
+
+    .sha {
+        span {
+            margin-right: 20px;
+        }
+    }
+
+}
