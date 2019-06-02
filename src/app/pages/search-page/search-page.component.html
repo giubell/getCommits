@@ -6,13 +6,19 @@
         </mat-card-header>
         <form class="searchForm" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
           <mat-form-field class="searchForm__input">
-            <input type="text" name="username" matInput placeholder="Username" ngModel>
+            <input type="text" name="username" matInput placeholder="Username" required ngModel>
           </mat-form-field>
           <mat-form-field class="searchForm__input">
-            <input type="text" name="reponame" matInput placeholder="Repository name" ngModel>
+            <input type="text" name="reponame" matInput placeholder="Repository name" required ngModel>
+          </mat-form-field>
+          <mat-form-field class="searchForm__input" *ngIf="isPrivate">
+            <input type="password" name="password" matInput placeholder="Password" required ngModel>
           </mat-form-field>
           <button type="submit" mat-raised-button color="primary">Search</button>
         </form>
+        <div class="searchForm__private">
+          <mat-checkbox [(ngModel)]="isPrivate">Private</mat-checkbox>
+        </div>
       </mat-card>
     </div>
   </section>

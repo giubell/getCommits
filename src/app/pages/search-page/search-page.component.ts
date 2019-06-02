@@ -10,15 +10,23 @@ import { Repo } from 'src/app/backendApi/models/repo.model';
 export class SearchPageComponent implements OnInit {
 
   public repo: Object;
+  public isPrivate: boolean;
 
   constructor(private router: Router) {
+    this.isPrivate = false;
    }
 
   ngOnInit() {
   }
 
   public onSubmit(repo: Repo) {
-    this.router.navigateByUrl(`/${repo.username}/${repo.reponame}/commits`)
+    if (this.isPrivate) {
+      alert('Mi spiace, non sono arrivato a gestire questo caso :(');
+      this.isPrivate = false;
+    }
+    else {
+      this.router.navigateByUrl(`/${repo.username}/${repo.reponame}/commits`);
+    }
   }
 
 }
