@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Repo } from 'src/app/backendApi/models/repo.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GithubService } from 'src/app/backendApi/services/github.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class CommitsPageComponent implements OnInit {
   public sha: string;
   public commit: {};
 
-  constructor(private route: ActivatedRoute, private githubService: GithubService) {
+  constructor(private route: ActivatedRoute, private githubService: GithubService, private router: Router) {
     this.repo = {};
    }
 
@@ -31,6 +31,10 @@ export class CommitsPageComponent implements OnInit {
       },
       (err) => {
         console.log('err', err);
+        if(err.status === 404) {
+          alert('Repository non trovata');
+          this.router.navigate(['/']);
+        }
       });
     }
   }
