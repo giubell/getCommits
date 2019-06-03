@@ -1,6 +1,8 @@
 .commitDetails {
     padding: 20px;
     line-height: 2em;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
 
     .commit {
         font-size: 1.2em;
